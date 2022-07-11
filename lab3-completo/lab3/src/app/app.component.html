@@ -1,0 +1,81 @@
+<div class="container">
+  <form #form="ngForm" class="row g-2">
+    <div class="col-12 my-5">
+      <div class="form-floating">
+        <h3>Components Maintenance</h3>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="form-floating">
+        <input [(ngModel)]="component.name" #name="ngModel" name="name" required type="text" class="form-control" id="nameInput" placeholder="" [value]="component.name">
+        <label for="nameInput">Name</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="form-floating">
+        <input type="number" 
+        [(ngModel)]="component.PartNum" #partNume="ngModel" name="partNum" required
+        class="form-control" id="partNumInput" placeholder="" [value]="component.PartNum">
+        <label for="partNumInput">PartNum</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="form-floating">
+        <input type="date" 
+        [(ngModel)]="component.ManufactureDate" #manufactureDate="ngModel" name="manufactureDate" required
+        class="form-control" id="manufactureDateInput" placeholder="" [value]="component.ManufactureDate">
+        <label for="manufactureDateInput">Manufactore Date</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="form-floating">
+        <input type="text"
+        [(ngModel)]="component.comments" #comments="ngModel" name="comments"
+        class="form-control" id="commetsInput" placeholder="" [value]="component.comments">
+        <label for="nameInput">Comments</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="form-floating">
+        <input type="text" 
+        [(ngModel)]="component.description" #description="ngModel" name="description"
+        class="form-control" id="descriptionInput" placeholder="" [value]="component.description">
+        <label for="descriptionInput">Description</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <button type="button" (click)="save()" [disabled]="!form.valid" class="btn btn-primary">Primary</button>
+    </div>
+  </form>
+</div>
+<div class="container">
+  <div class="row w-100 pt-4">
+    <div class="col-12">
+      <table class="table w-100">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Manufactore date</th>
+            <th scope="col">PartNum</th>
+            <th scope="col">Comments</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of components">
+            <td>{{item.name}}</td>
+            <td>{{item.ManufactureDate}}</td>
+            <td>{{item.PartNum}}</td>
+            <td>{{item.comments}}</td>
+            <td>{{item.description}}</td>
+            <td>
+              <button type="button" (click)="show(item)" class="btn btn-warning">Update</button>
+              <button type="button" (click)="delete(item)" class="btn btn-danger ms-2">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

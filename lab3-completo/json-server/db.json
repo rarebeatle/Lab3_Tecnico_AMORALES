@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "test",
+      "description": "test test",
+      "ManufactureDate": "10/10/2022",
+      "PartNum": "10",
+      "comments": "comment test"
+    },
+    {
+      "name": "test post",
+      "description": "description 3",
+      "ManufactureDate": "2022-07-09",
+      "PartNum": 3,
+      "comments": "my comments",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
